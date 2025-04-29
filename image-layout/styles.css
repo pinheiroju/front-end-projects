@@ -40,8 +40,5 @@ img{
 }
 
 .item5{
-    grid-area: 1/3/3/4;
-    
-    
-    
+    grid-area: 1/3/3/4; 
 }
