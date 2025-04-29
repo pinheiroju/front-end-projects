@@ -5,3 +5,5 @@ As I am still in the process of developing them, I will add the links to the spe
 ➤ accordion : https://roadmap.sh/projects/accordion
 
 ➤ image grid : https://roadmap.sh/projects/image-grid
+
+➤ tooltip : https://roadmap.sh/projects/tooltip-ui
