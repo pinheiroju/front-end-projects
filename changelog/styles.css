@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.changelog-container{
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.changelog-container h2{
+    margin-bottom: 20px;
+}
+
+
+/* the vertical line */
+.timeline{
+    position: relative;
+    padding: 0;
+    margin: 20px 0;
+}
+
+
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3572a0;
+
+    height: 0;
+    animation: grow-line 3s forwards;
+}
+
+@keyframes grow-line{
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+
+
+/* container around the content */
+.timeline-item{
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: 20px;
+
+    opacity: 0;
+    animation: fade-in ease-out .6s forwards;
+}
+
+/* the circles on the timeline */
+.timeline-item::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #3572a0;
+    background-color: #3572a0;
+    border-radius: 50%;
+    z-index: 1;   
+
+}
+
+
+@keyframes fade-in{
+    from{
+        opacity: 0;    
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* so the balls can appear late */
+.timeline-item:nth-child(1){
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(2){
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(3){
+    animation-delay: 0.6s;
+}
+
+.timeline-item:nth-child(4){
+    animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(5){
+    animation-delay: 1s;
+}
+
+.timeline-item:nth-child(6){
+    animation-delay: 1.2s;
+}
+
+/* the actual content ( date and content */
+.timeline-content{
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 45%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.timeline-date{
+    position: absolute;
+    left: 0;
+    width: 45%;
+    text-align: right;
+    padding-right: 20px;
+    top: 15px;
+    font-weight: 600;
+}
+
